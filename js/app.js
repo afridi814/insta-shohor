@@ -10,7 +10,7 @@ const getLikedPosts = () => {
 const getReportedPosts = () => {
     return posts.filter((post) => reportedPostsId.includes(post.id));
 };
-// getReportedPosts()
+
 
 const isLiked = (id) => {
     return likedPostsId?.length && !!likedPostsId.includes(id);

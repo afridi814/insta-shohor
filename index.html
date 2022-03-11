@@ -78,7 +78,54 @@
             </div>
         </main>
         <section>
+            <h2>Qs: How does JS works</h2>
+            <p>Ans:
+                <ul>
+                    <li>first code is received by parser & check the syntactic errors line by line</li>
+                    <li>If there's no errors exists it creates the data structure called AST(Abstract Syntax Tree)</li>
+                    <li>Then the JS engine converts the code into machine code</li>
+                    <li>
+                        After running it on machine code it is sent for execution
+
+                    </li>
+                    <li>Finnally JS program run at web browser</li>
+                </ul>
+            </p>
             
+
+            <h2>Qs: What does JS event loop do?</h2>
+            <p>Ans:
+                <h4>
+                    javascript is a single threaded language but browser API's are multi-threaded.The event loop executes this constantly whether it empty or not. If the processing is empty, new function is added from event queue loop. Rather it another function is processed.
+                </h4>
+
+                const second = ()=>console.log("I'm Second") <br>
+                const third = ()=>console.log("I'm third") <br>
+                const first = ()=>{ <br>
+                    console.log("I'm first") <br>
+                    setTimeOut(second,2000) <br>
+                    third() <br>
+                    } <br>
+                    first() <br>
+                    <br>
+
+                    এই উপরের কোডটি যেখানে রান হয় সেটাকে বলে call stack. <br>
+                    <br>
+
+                    তিনটা ফাংশনের মধ্যে প্রথমে যেহেতু first() কে কল করা হয়েছে তাই, এটি সবার শুরুতে console এ আউটপুট দিবে। <br>
+                    তারপর second() এবং তারপর third()
+                    console এ দিবার কথা। কিন্তু যেহেতু setTimeOut একটি asynchronous function এবং জাভাস্ক্রিপ্ট synchronous and asynchronous দুই ওয়েতেই কাজ করে, তাই second function কে হোল্ড এ রেখে third function console এ আউটপুট হিসেবে দিবে।
+                    second function কে web api নামক একটি ইঞ্জিন হোল্ড করে callback queue তে জমা করে রাখে।
+                    <br>
+                    <br>
+
+                    এই call stack & callback queue এর মধ্যে যে যোগাযোগ মেইন্টেইন করবে তার নাম Event Loop.
+
+
+               
+            </p>
+
+
         </section>
         <footer></footer>
 
